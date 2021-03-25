@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" />
+    <link rel="stylesheet" media="screen" href="/css/utils.css">
+    <link rel="stylesheet" media="screen" href="/css/questions.css">
+    <link rel="stylesheet" media="screen" href="/css/index.css"> 
+    <link rel="stylesheet" media="screen" href="/css/profile.css"> 
+    <link rel="icon" href="/resources/images/logo_64.png">
+    <title>Profile | 404AW</title>
+</head>
+<body>
+
+    <%- include("header") %>
+    
+    <div class="content-body">
+        <div class="content-info mt-20">
+            <div class="first-row">
+                <div class="user-info">
+                    <img src="/imagen/<%= user.img %>" alt="profile image" class="profile-img">
+                    <span class="username"><%= user.username %></span>
+                    <span class="date">Miembro desde <%= user.date %></span>
+                </div>                
+                <div class="stats">
+                    <span class="ds-b profile-header">ESTADISTICAS</span>     
+                    <div class="stats-info">
+                        <div class="questions">
+                            <span class="key">Preguntas</span>
+                            <span class="value"><%= user.questions %></span>
+                        </div>
+                        <div class="rep">
+                            <span class="key">Reputación</span>
+                            <span class="value"><%= user.rep %></span>
+                        </div>
+                        <div class="answers">
+                            <span class="key">Respuestas</span>
+                            <span class="value"><%= user.answers %></span>
+                        </div>
+                    </div>                   
+                </div>
+            </div>
+            <div class="medals mt-20">
+                <span class="profile-header ds-b mb-20">MEDALLAS</span>
+                <div class="medals-info">
+                    <div class="bronze-medals">
+                        <div class="bronze-title bronze mb-10">
+                            <span class ="title">BRONCE</span>
+                            <span class = "title"><%= medals.Bronze.length %></span>
+                        </div>
+                        <div class="bronze-info mt-20">
+                            <% medals.Bronze.forEach(function(medalPkg){ %>
+                                <div class="medal-name">
+                                    <span class="detailed-info"><span class="medal bronze"></span> <%= medalPkg.name %></span> x<%= medalPkg.totalCount %>
+                                </div>
+                            <% }); %>
+                        </div>                                         
+                    </div>    
+                    <div class="silver-medals">
+                        <div class="silver-title silver">
+                            <span class="title">PLATA</span>
+                            <span class="title"><%= medals.Silver.length %></span>
+                        </div>
+                        <div class="silver-info mt-20">
+                            <% medals.Silver.forEach(function(medalPkg){ %>
+                                <div class="medal-name">
+                                    <span class="detailed-info"><span class="medal silver"></span> <%= medalPkg.name %></span> x<%= medalPkg.totalCount %>
+                                </div>
+                            <% }); %>
+                        </div>                       
+                    </div>    
+                    <div class="gold-medals">   
+                        <div class="gold-title gold">
+                            <span class="title">ORO</span>
+                            <span class= "title"><%= medals.Gold.length %></span>
+                        </div>
+                        <div class="gold-info  mt-20">
+                            <% medals.Gold.forEach(function(medalPkg){ %>
+                                <div class="medal-name">
+                                    <span class="detailed-info"><span class="medal gold"></span> <%= medalPkg.name %></span> x<%= medalPkg.totalCount %>
+                                </div>
+                            <% }); %>
+                        </div>                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

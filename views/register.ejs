@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/credentials.css">
+    <link rel="stylesheet" href="/css/utils.css">
+    <link rel="icon" href="/resources/images/logo_64.png">
+    <title>Crear cuenta | 404AW</title>
+</head>
+<body>
+    <header>
+        <div id="header">
+            <img src="/resources/images/logo_512.png" alt="404" class="logo">
+        </div>
+    </header>
+
+    <div class="registro">
+        <form action="/loginout/registrarUsuario" method="POST" enctype="multipart/form-data" class="form-control">
+            <span class="form-title">Correo electrónico *</span>
+            <input type="email" name="email" class="form-field" autocomplete="off" placeholder="Introduce tu correo electónico...">
+            <span class="form-title">Contraseña *</span>
+            <input type="password" name="password" class="form-field" autocomplete="off" placeholder="Introduce tu contraseña...">
+            <span class="form-title">Confirmar contraseña *</span>
+            <input type="password" name="password_confirm" class="form-field" autocomplete="off" placeholder="Confirma tu contraseña...">
+            <span class="form-title">Nombre para mostrar *</span>
+            <input type="text" name="username" class="form-field" autocomplete="off" placeholder=" Introduce un nombre valido...">
+            <span class="form-title">Imagen de perfil</span>
+            <input type="file" name="img" class="form-field" autocomplete="off">
+            <div class="btns-form_login">
+                <a class="btn btn-primary" href="/loginout/login">Iniciar sesión <i class="fa fa-sign-in"></i></a>
+                <button class="btn btn-primary" type="submit">Crear cuenta <i class="fa fa-plus-square-o"></i></button>
+            </div>
+            <div class="error">
+                <% if(errorMsg){ %>
+                    <%= errorMsg %>
+                <% } %>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

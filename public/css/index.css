@@ -1,0 +1,111 @@
+/* @import url('../css/utils.css'); */
+
+*{
+    padding: 0;
+    margin: 0;
+}
+html{
+    width: 100%;
+    height: 100%;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #292828;
+    font-size: 14px;
+    color: #fff;
+}
+
+/* Barra de busqueda para tener la lupa pegada al input */
+.icon-find{
+    width: 20px;
+    background-color: #fff;
+    padding: 2px 5px;
+    margin-left: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    border-right: none;
+}
+input.find-field{
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+}
+/****/
+
+header{
+    background-color: #131313;
+    padding-bottom: 10px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+header #header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0; */
+    padding: 0 10px;   
+    /* background-color: #131313; */
+}
+
+#header .logo{
+    width: 110px;
+    cursor: pointer;
+}
+
+#header .header-element{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#header .header-element.menu a{
+    margin: 5px;
+    width: 100%;
+}
+
+#header .header-element .profile-img{
+    border-radius: 50%;
+    width: 50px;
+}
+
+#header .header-element.profile-info{
+    padding-right: 20px;
+}
+
+#header .header-element .username{
+    text-align: center;
+    color: #fff;
+    margin: 2px;
+}
+
+.content-body{
+    padding-top: 180px;
+}
+
+.content-search .search form{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 5px;
+    /* width: 100%; */
+}
+.content-search .search form input.form-field{
+    margin: 0 5px;
+    /* width: 75%; */ /*pq con form width 100% y este a 75% mete mas ancho a toda la pagina*/
+}
+
+.content-search .search .form-control{
+    width: auto;
+}
+
+/* PARA DARLE UN EFECTO SOMBRA A TODAS LAS IMAGENES */
+.profile-img,
+.user-img{
+    box-shadow: 0px 0px 7px 0px #fff;
+    cursor: pointer;
+}

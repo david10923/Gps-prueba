@@ -1,0 +1,33 @@
+
+.content-body .users-content{
+   text-align: center;
+   width: 75%;
+   margin: 0 auto;
+}
+.content-body .users-content .title{
+    font-size: 22px;
+}
+
+.content-body .users-content .all-users {
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.content-body .users-content .all-users .user-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    background-color: #575757;
+    padding: 25px;
+    margin: 10px;
+    max-width: 80px;
+}
+
+.content-body .users-content .content-search .search .form-field{
+    width: 20%;
+}

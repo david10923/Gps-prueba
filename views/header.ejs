@@ -1,0 +1,27 @@
+<header>
+    <div id="header">
+        <div class="header-element menu">
+            <a class="btn btn-primary" href="/preguntas/">Preguntas <i class="fa fa-question"></i></a>
+            <a class="btn btn-primary" href="/preguntas/descargar/sinresponder">Sin responder <i class="fa fa-flag"></i></a>
+            <a class="btn btn-primary" href="/usuarios">Usuarios <i class="fa fa-users"></i></a>
+        </div>
+        <a href="/index"><img src="/resources/images/logo_512.png" alt="404" class="logo"></a>
+        
+
+        <div class="header-element profile-info">
+            <a href="/usuarios/perfil/<%= userID %>"><img src="/imagen/<%= userImg %>" alt="Perfil" class="profile-img"></a>
+            <span class="username"><%= userName %></span>
+            <a class="btn btn-primary mb-10 mt-5" href="/mensajes/">Mensajes</a>
+            <a class="btn btn-primary" href="/loginout/logoutUser">Cerrar Sesión <i class="fa fa-sign-out"></i></a>
+        </div>
+    </div>
+    <div class="content-search">
+        <div class="search">
+            <form action="/preguntas/buscar" method="GET" class="form-control">
+                <button class="btn btn-search ml-10" type="submit">Buscar</button>
+                <img src="/resources/images/lupa.png" alt="Search" class="icon-find">
+                <input type="text" class="form-field ml-0 find-field" name="busqueda" autocomplete="off" placeholder="Buscar por titulo/cuerpo de pregunta">
+            </form>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" />
+    <link rel="stylesheet" media="screen" href="/css/utils.css">
+    <link rel="stylesheet" media="screen" href="/css/index.css">
+    <link rel="stylesheet" media="screen" href="/css/questions.css">
+    <link rel="stylesheet" media="screen" href="/css/detailedQuestion.css">
+    <link rel="icon" href="/resources/images/logo_64.png">
+    <title><%= question.title %> | 404AW</title>
+</head>
+<body>
+    <%- include("header") %>
+
+    <div class="content-body">
+        <!-- DINAMICO -->
+        <div class="question-asked">
+            <span class="title mb-10"><%= question.title %></span>
+            <span class="viewed mt-5">Vista <%= question.visits %> veces</span>
+            <span class="votes mt-5"><a href="/preguntas/like/<%= question.qID %>"><%=question.nLikes %> <i class="fa fa-thumbs-up like"></i></a><a href="/preguntas/dislike/<%= question.qID  %>"><%= question.nDislikes %> <i class="fa fa-thumbs-down dislike"></i></a></span>
+            <div class="question-body mt-10"><%= question.body %></div>
+            <div class="labels mt-10">
+                <% question.tags.forEach(function(tag){ %>
+                    <a href="/preguntas/etiquetas/<%= tag %>"><span class="label"><%= tag %></span></a>
+                <% }); %>
+            </div>
+            <div class="user-info">
+                <div class="user-profile">
+                    <span class="date">Formulada el <%= question.date %></span>
+                    <a href="/usuarios/perfil/<%= question.qUserID %>"><img src="/imagen/<%= question.profileImg %>" alt="imagen de usuario" class="user-img"></a>
+                    <span class="username-ask"><%= question.username %></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- DINAMICO -->
+        <div class="answers">
+            <span class="title mt-10 mb-20"><%= answers.length %> respuestas</span>
+            <% answers.forEach(function(answer){ %>
+                <div class="reply">
+                    <span class="votes mt-5"><a href="/preguntas/respuestas/like/<%= question.qID %>/<%= answer.aID%>"><%= answer.nLikes %> <i class="fa fa-thumbs-up like"></i></a> <a href="/preguntas/respuestas/dislike/<%= question.qID %>/<%= answer.aID%>"><%= answer.nDislikes %><i class="fa fa-thumbs-down dislike"></i></a></span>
+                    <div class="answer-body mt-10"><%= answer.body %></div>
+                    <div class="user-info mt-10">
+                        <div class="user-profile">
+                            <span class="date">Formulada el <%= answer.date %></span>
+                            <a href="/usuarios/perfil/<%= answer.userID %>"><img src="/imagen/<%= answer.profileImg %>" alt="imagen de usuario" class="user-img"></a>
+                            <span class="username-ask"><%= answer.aUser %></span>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+
+        <div class="user-answer">
+            <span class="title">Tu respuesta</span>
+            <form action="/preguntas/publicarRespuesta/<%= question.qID %>" method="POST">
+                <textarea class="form-field mt-10 mb-10" placeholder="Escribe aqui tu respuesta detallada" name="a_body"></textarea>
+                <button class="btn btn-primary mb-20" type="submit">Publicar tu respuesta <i class="fa fa-check-square-o"></i></button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

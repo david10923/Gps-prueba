@@ -1,0 +1,93 @@
+
+.questions-content{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;    
+}
+
+.questions-content .title{
+    font-size: 22px;
+}
+
+.questions-content .control-panel{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 75%;
+    margin: 5px 0;
+}
+
+.questions-content .questions{
+    width: 75%;
+}
+
+/* QUESTION */
+.questions-content .questions .question{
+    background-color: #6E6E6E;
+    padding: 5px 10px;
+    display: flex;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+
+/* QUESTION INFO */
+.questions-content .questions .question .question-info{
+    width: 75%;
+}
+.questions-content .questions .question .question-info .title{
+    color: #35495e;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+.questions-content .questions .question .question-info .description{
+    font-size: 13px;
+}
+.questions-content .questions .question .question-info .labels,
+.question-asked .labels{
+    margin-top: 5px;
+}
+.questions-content .questions .question .question-info .labels .label,
+.question-asked .labels .label{
+    font-size: 10px;
+    font-weight: bold;
+    color: #35495e;
+    background-color: #66b0ff;
+    padding: 2px 5px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+
+/* QUESTION USER */
+.questions-content .questions .question .question-user,
+.question-asked .user-info .user-profile,
+.answers .reply .user-info .user-profile{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.questions-content .questions .question .question-user .date,
+.question-asked .user-info .user-profile .date,
+.answers .reply .user-info .date{
+    color: #fff;
+    font-size: 12px;
+}
+.questions-content .questions .question .question-user .user-img,
+.question-asked .user-info .user-profile .user-img,
+.answers .reply .user-info .user-img{
+    width: 50px;
+    border-radius: 50%;
+    margin: 5px 0;
+}
+.questions-content .questions .question .question-user .username-ask,
+.question-asked .user-info .user-profile .username-ask,
+.answers .reply .user-info .username-ask{
+    color: #a0a9da;
+    font-weight: bold;
+}

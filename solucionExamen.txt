@@ -1,0 +1,19 @@
+-Añado un nuevo modelo , un nuevo router y un nuevo controller para poder gestionar el sistema de mensajeria
+-Creo en la Base de datos una nueva tabla que tiene un ID autoincremental, el UserDest que es una Fk de la tabla users de la columna email, también tengo una columna 
+que se llama UserOrigin que es un FK que hace referencia al email de la tabla users ,  que  es el que manda el mensaje. Ademas de estos campos tengo un body copn el contenido del chat y 
+la date que hace referencia a cuando se ,mando ese mensaje.
+-Añado al header un nuevo boton para el manejo de los mensajes de ese usuario.
+-En el router ademas  creo los distintos manejadores de ruta sobre "/mensajes/"
+    - El primer manejador de ruta "/" sirve para coger todos los mensajes de ese usuario , para ello tengo que añadir una nueva funcion en el controller que te muestra
+    los mensajes del usuario logueado, además para ello creare una funcion en el modelo que me valdra para sacar toda la informacion de la base de datos haciendo referencia a 
+    todos los mensajes de ese usuario , cogiendo los campos indicados en el enunciado-
+    -Para esta parte tambien tendre que crear una nueva vista que se encarga de renderizar los datos que le vienen desde la base de datos.
+    -Para maquetar esta vista utilizare algunas clases definidas en utils que me sirven de plantilla, ademas añadire una nueo css para el estilo de la nueva pagina.("mensajes.css")
+-Para borrar los mensajes me creo una nueva ruta sobre mensajes que cuando le de al boton le paso el email del usuario que le formulo ese mensaje para borrarlo de la base de datos.
+    -Para ello añadire una nueva funcion en el controller que recibira el usuario y tendra en session el de la seesion actual y borrar ese mensaje.
+
+-Para la segunda parte del envio de mensajes creare un nuevo ejs llamado "enviarMensajes.ejs" donde se mostrara lo indicado en el enunciado y ademas un nuevo ficghero css para maquetar
+la plantilla llamado "enviarMensajes.css".
+-Me creare en mi nuevo router un nuevo manejador que me redirige a la vista indicada en el enunciado ."/mensajes/crearMensaje" 
+-En el enviarMensajes incluyo un form para cuando el usuario lo clikee haga post  con el mensaje.Este manejador de ruta esta definido en el MensajesRouter
+

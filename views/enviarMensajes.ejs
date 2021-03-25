@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" />
+    <link rel="stylesheet" media="screen" href="/css/index.css">
+    <link rel="stylesheet" media="screen" href="/css/utils.css">  
+    <link rel="stylesheet" media="screen" href="/css/mensajes.css"> 
+    <link rel="stylesheet" media="screen" href="/css/enviarMensajes.css">   
+    <link rel="icon" href="/resources/images/logo_64.png">
+    <title>Página principal | 404AW</title>
+</head>
+<body>
+    <%- include('header') %>
+
+    <div class="content-body">
+        <div class= "mensajes-info">
+            <span>Enviar Mensajes</span>
+            <!-- MUESTRO TODOS LOS MENSAJES -->                    
+            <% usuarios.forEach(usuario =>{ %>
+                <!-- <%console.log(usuario)%> -->
+                <form action="/mensajes/enviar" method="POST">
+                    <div class ="userInfo">
+                        <img src="/imagen/<%= usuario.profileImg %>" alt="profile image" class="profile-img">
+                        <span class="separator"><%= usuario.username %></span class="separator">
+                        <input type="hidden" name ="usuarioDestino" value="<%= usuario.email %>">
+                        <input type="text" class ="inputClass" name ="mensaje" placeholder="Escribe el mensaje que quieres mandar al usuario">
+                        <button type="submit" class="btn btn-primary mt-15" >Enviar <i class="fa fa-check-square-o"></i></button>
+                    </div>   
+                </form>
+                
+            <% });%>
+        </div>
+    </div>
+    
+</body>
+</html>

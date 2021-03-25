@@ -1,0 +1,33 @@
+
+
+
+.main-question{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center;
+    align-content: center;
+    justify-content: center; */
+    margin-top: 10px;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.main-question .title{
+    font-size: 16px;
+    text-align: center;
+}
+
+.main-question .question-info{
+    width: 100%;    
+}
+
+.main-question .question-info .explanation{
+    font-size: 12px;
+    color: #a9a9a9;
+}
+.main-question .question-info .btns-question_actions{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

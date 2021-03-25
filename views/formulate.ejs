@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" />
+    <link rel="stylesheet" media="screen" href="/css/utils.css">
+    <link rel="stylesheet" media="screen" href="/css/index.css">
+    <link rel="stylesheet" media="screen" href="/css/formulate.css">
+    <link rel="icon" href="/resources/images/logo_64.png">
+    <title>Crear una pregunta | 404AW</title>
+</head>
+<body>
+    <%- include("header") %>
+
+    <div class="content-body">
+        <div class="main-question">
+            <span class="title">Formular una pregunta</span>
+            <div class="question-info">
+                <form action="/preguntas/formulateQuestion" method="POST">
+                    <span class="form-title mt-15 mb-0">Titulo*</span>
+                    <span class="form-title explanation">Sé especifico e imagina que estás haciendo la pregunta a otra persona</span>
+                    <input type="text" name="title" class="form-field" placeholder="¿Cuál es tu pregunta sobre programación de aplicaciones web">
+                    
+                    <span class="form-title mt-15 mb-0">Cuerpo*</span>
+                    <span class="form-title explanation">Incluye toda la información que alguien necesitaría para responder a tu pregunta</span>
+                    <textarea class="form-field" name="body" placeholder="Escribe aqui tu respuesta detallada"></textarea>
+    
+                    <span class="form-title mt-15 mb-0">Etiquetas</span>
+                    <span class="form-title explanation">Añade hasta 5 etiquetas para describir sobre qué trata tu pregunta</span>          
+                    <input type="text" class="form-field" name="labels" placeholder="Por ejemplo: @node@express" pattern="^(@[A-Za-z0-9]+){0,5}$">
+                    <div class="btns-question_actions">
+                        <button type="submit" class="btn btn-primary mt-15">Publica tu pregunta <i class="fa fa-check-square-o"></i></button>
+                    </div>
+                </form>
+            </div>
+            <div class="error">
+                <% if(errorMsg){ %>
+                    <%= errorMsg %>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

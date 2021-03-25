@@ -1,0 +1,32 @@
+.content-body .mensajes-info{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+}
+
+
+.content-body .mensajes-info .userInfo{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    width: 75%;
+    border-radius: 5px;
+    border:2px solid white;
+    padding: 20px;
+    align-items: center;
+    justify-content:space-between;
+}
+
+
+.content-body .mensajes-info .userInfo .separator{
+    margin:10px;
+    display: inline-block;
+    height: 10px;
+} 
+
+.content-body img{
+    width: 50px;
+    height: 50px;
+    border-radius: 60%;
+}

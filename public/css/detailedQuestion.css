@@ -1,0 +1,121 @@
+
+/* INFORMACION RELATIVA A LA PREGUNTA */
+.question-asked,
+.answers,
+.user-answer{
+    width: 75%;
+    margin: 20px auto;
+}
+
+.reply{
+    margin-left: 25px;
+}
+
+.question-asked .title,
+.answers .title,
+.user-answer .title{
+    font-size: 22px;
+}
+
+.question-asked .question-body,
+.answers .reply .answer-body{
+    font-size: 12px;
+}
+
+.question-asked .user-info,
+.answers .reply .user-info{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.question-asked .user-info .user-profile,
+.answers .reply .user-info .user-profile{
+    width: auto; /* width para sobreescribir el widh de la clase de questions.css */
+}
+.question-asked .user-info .user-profile .date,
+.question-asked .user-info .user-profile .username-ask,
+.answers .reply .user-info .user-profile .date,
+.answers .reply .user-info .user-profile .username-ask{
+    color: #fff;
+}
+
+
+
+.questions-content .viewed,
+.questions-content .votes, 
+.reply .reply-info .votes,
+.question-asked .viewed,
+.question-asked .votes,
+.answers .reply .votes{
+    display: block;
+    /* height: 18px; */
+    border-radius: 3px;
+    padding: 2px 5px;  
+}
+
+.questions-content .viewed,
+.question-asked .viewed{
+    background-color: rgb(106, 115, 122);
+}
+
+.questions-content .votes, 
+.reply .reply-info .votes,
+.question-asked .votes,
+.answers .reply .votes{
+    background-color: rgb(219, 144, 46);
+}
+
+/* lo mismo que en questiosn labels */
+.questions-content .questions .labels .label{
+    font-size: 10px;
+    font-weight: bold;
+    color: #35495e;
+    background-color: #66b0ff;
+    padding: 2px 5px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.questions-content .questions .info, 
+.reply .reply-info .info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.questions-content .questions .info .date, 
+.reply .reply-info .info .date{
+    color: white;
+    font-size: 12px;
+    display: block;
+}
+.questions-content .questions .info .user-img,
+.reply .reply-info .info .user-img
+{
+    width: 50px;
+    border-radius: 50%;
+    margin: 5px 0;
+}
+.questions-content .questions .info .username-ask,
+.reply .reply-info .info .username-ask{
+    color:rgb(219 144 46);
+    font-weight: bold;
+}
+
+/* RESPUESTAS A LA PREGUNTA */
+
+.reply-text{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.reply-text .reply-title,
+.reply .times-replied{
+    text-align: center;   
+    font-size: 22px; 
+}
+
+

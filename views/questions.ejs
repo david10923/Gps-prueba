@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" />
+    <link rel="stylesheet" media="screen" href="/css/index.css">
+    <link rel="stylesheet" media="screen" href="/css/utils.css">
+    <link rel="stylesheet" media="screen" href="/css/questions.css">
+    <link rel="icon" href="/resources/images/logo_64.png">
+    <title>Preguntas | 404AW</title>
+</head>
+<body>
+    <%- include("header") %>
+
+    <div class="content-body">
+        <div class="questions-content">
+            <span class="title"><%= title %></span>
+            <div class="control-panel">
+                <span class="number-of-questions"><%= total %> preguntas</span>
+                <a class="btn btn-primary" href="/preguntas/formular">Formular una pregunta <i class="fa fa-pencil"></i></a>
+            </div>
+            <div class="questions">
+                <% questions.forEach(function(question){ %>
+                    <div class="question">
+                        <div class="question-info">
+                            <a href="/preguntas/<%= question.ID %>"><span class="title"><%= question.title %></span></a>
+                            <span class="description"><%= question.body %></span>
+                            <div class="labels">
+                                <% question.tags.forEach(function(tag){ %>
+                                    <a href="/preguntas/etiquetas/<%= tag %>"><span class="label"><%= tag %></span></a>
+                                <% }); %>
+                            </div>
+                        </div>
+                        <div class="question-user">
+                            <span class="date">Formulada el <%= question.date %></span>
+                            <a href="/usuarios/perfil/<%= question.userID %>"><img src="/imagen/<%= question.userImg %>" alt="foto de perfil" class="user-img"></a>
+                            <span class="username-ask"><%= question.username %></span>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
